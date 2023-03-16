@@ -4,7 +4,7 @@
 }
 
 .wrap{
-    width: 1200px;
+    width: 80%;
     margin: auto;
 }
 
@@ -24,8 +24,11 @@ img{
     padding: 0 10px;
 }
 
-.text > h2{
-    font-size: 23px;
+.text h2{
+    font-size: 22px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .text > h3{
@@ -54,10 +57,21 @@ img{
 
 .price{
     display: flex;
+    white-space: nowrap;
 }
 
 .price > *{
     margin: 0 5px;
+}
+
+.name{
+    display: flex;
+    flex-direction: row;
+}
+
+.name button{
+    padding: 0 10px;
+    white-space: nowrap;
 }
 
 .soldOut{
@@ -74,4 +88,17 @@ img{
     align-items: center;
 }
 
-
+@media screen and (width <= 768px) {
+    .search{
+        flex-direction: column;
+    }
+    .price{
+        flex-direction: column;
+    }
+    .search > *{
+        margin: 20px 0;
+    }
+    .col-12{
+        margin-bottom: 20px;
+    }
+}
