@@ -50,16 +50,18 @@
 
         function loadData(data) {
             let productList = data.map((product, index) => `
-            <div class="col-12 col-md-3" id='product${index}'>
-                <div class="pic">
-                    <img src="https://picsum.photos/200/300/?random=${index}">
-                </div>
-                <div class="text">
-                    <h2>${product.ProductName}</h2>
-                    <h3>價格：<span>${product.Price}</span> 元</h3>
-                    <div class="detail">
-                        <p>剩餘數量：<span>${product.Amount}</span></p>
-                        <p>分類：<span>${product.ProductType}</span></p>
+            <div class="col-12 col-md-3 p-1">
+                <div class="card" id='product${index}'>
+                    <div class="pic">
+                        <img src="https://picsum.photos/200/300/?random=${index}">
+                    </div>
+                    <div class="text">
+                        <h2>${product.ProductName}</h2>
+                        <h3>價格：<span>${product.Price}</span> 元</h3>
+                        <div class="detail">
+                            <p>剩餘數量：<span>${product.Amount}</span></p>
+                            <p>分類：<span>${product.ProductType}</span></p>
+                        </div>
                     </div>
                 </div>
             </div>

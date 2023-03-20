@@ -13,10 +13,6 @@ img{
     vertical-align: top;
 }
 
-.pic{
-    padding: 10px 0;
-}
-
 .detail{
     display: flex;
     flex-direction: row;
@@ -39,11 +35,16 @@ img{
 
 .text{
     margin-top: 10px;
+    padding: 10px;
 }
 
 .col-12, .col-md-3{
-    border: 1px solid black;
     position: relative;
+}
+
+.card{
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .search{
