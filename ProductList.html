@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="search wrap">
+    <div class="search">
         <select id="select">
             <option value="none">根據類型查詢</option>
         </select>
@@ -27,6 +27,10 @@
             <input type="text" placeholder=" 商品名稱" id="name">
             <button id="searchBtn">搜尋</button>
         </div>
+
+        <div class="tag">
+            <p>搜索</p>
+        </div>
     </div>
 
     <main></main>
@@ -41,7 +45,7 @@
 
         import { product } from "./product/product.js"
 
-        let btn
+        let btn, tag
 
         window.onload = function () {
             selectType()
@@ -49,6 +53,9 @@
 
             btn = document.getElementById('searchBtn')
             btn.onclick = search
+
+            tag = document.getElementsByClassName('tag')[0]
+            tag.onclick = searchBar
         }
 
         function loadData(data) {
@@ -152,8 +159,18 @@
             Swal.fire(
                 "查無商品",
                 "",
-                "error" 
+                "error"
             );
+        }
+
+        function searchBar(){
+            let search = document.getElementsByClassName('search')[0]
+
+            if(search.style.right == '100%'){
+                search.style.right = '500px'
+            }else{
+                search.style.right = '100%'
+            }
         }
     </script>
 </body>

@@ -1,81 +1,107 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.wrap{
+.wrap {
     width: 80%;
     margin: auto;
 }
 
-img{
+img {
     width: 100%;
     vertical-align: top;
 }
 
-.detail{
+.detail {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0 10px;
 }
 
-.text h2{
+.text h2 {
     font-size: 22px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.text > h3{
+.text>h3 {
     font-size: 18px;
     color: red;
     margin-left: 10px;
 }
 
-.text{
+.text {
     margin-top: 10px;
     padding: 10px;
 }
 
-.col-12, .col-md-3{
+.col-12,
+.col-md-3 {
     position: relative;
 }
 
-.card{
+.card {
     border-radius: 5px;
     overflow: hidden;
 }
 
-.search{
+.search {
     padding: 20px;
     display: flex;
+    position: fixed;
+    justify-content: flex-end;
+    background-color: #888;
+    width: 1200px;
+    right: 100%;
+    top: 100px;
+    z-index: 1;
+    transition: 1s;
 }
 
-.search > *{
+.tag {
+    text-orientation: upright;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #000;
+    color: #fff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 100%;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.search > :not(.tag) {
     margin: 0 20px;
 }
 
-.price{
+.price {
     display: flex;
     white-space: nowrap;
 }
 
-.price > *{
+.price>* {
     margin: 0 5px;
 }
 
-.name{
+.name {
     display: flex;
     flex-direction: row;
 }
 
-.name button{
+.name button {
     padding: 0 10px;
     white-space: nowrap;
 }
 
-.soldOut{
+.soldOut {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -89,17 +115,20 @@ img{
     align-items: center;
 }
 
-@media screen and (width <= 768px) {
-    .search{
+@media screen and (width <=768px) {
+    .search {
         flex-direction: column;
     }
-    .price{
+
+    .price {
         flex-direction: column;
     }
-    .search > *{
+
+    .search>* {
         margin: 20px 0;
     }
-    .col-12{
+
+    .col-12 {
         margin-bottom: 20px;
     }
 }
