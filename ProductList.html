@@ -35,7 +35,10 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+
     <script type="module">
+
         import { product } from "./product/product.js"
 
         let btn
@@ -80,7 +83,7 @@
 
             data.forEach((item, index) => {
                 let product = document.getElementById('product' + index)
-                if(item.Amount == 0){
+                if (item.Amount == 0) {
                     let div = document.createElement('div')
                     div.classList.add('soldOut')
                     div.innerHTML = "售完"
@@ -138,14 +141,21 @@
                 return product.ProductName.toLowerCase().includes(keyword) || product.ProductType.toLowerCase().includes(keyword);
             });
 
-            if(productList.length == 0){
-                alert('查無商品')
+            if (productList.length == 0) {
+                alertTest()
                 return
             }
             loadData(productList)
+        }
+
+        function alertTest() {
+            Swal.fire(
+                "查無商品",
+                "",
+                "error" 
+            );
         }
     </script>
 </body>
 
 </html>
-
